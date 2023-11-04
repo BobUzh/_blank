@@ -4,15 +4,9 @@
       "type": "empty-section",
       "settings": {
       }
-    },
-    "22a378ec-a3eb-4e51-b5af-cf40873df090": {
-      "type": "slider",
-      "settings": {
-      }
     }
   },
   "order": [
-    "main",
-    "22a378ec-a3eb-4e51-b5af-cf40873df090"
+    "main"
   ]
 }
