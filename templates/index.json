@@ -2,10 +2,17 @@
   "sections": {
     "main": {
       "type": "empty-section",
-      "settings": {}
+      "settings": {
+      }
+    },
+    "22a378ec-a3eb-4e51-b5af-cf40873df090": {
+      "type": "slider",
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "22a378ec-a3eb-4e51-b5af-cf40873df090"
   ]
 }
