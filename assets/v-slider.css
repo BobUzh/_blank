@@ -1,0 +1,15 @@
+.test {
+  background-color: darkslategray;
+}
+
+.slider__slide {
+  position: relative;
+}
+
+.slider__text {
+  z-index: 2;
+  position: absolute;
+  color: white;
+  top: 0;
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInYtc2xpZGVyLnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDSTs7O0FBR0o7RUFDSTs7O0FBR0E7RUFDSTtFQUNBO0VBQ0E7RUFDQSIsImZpbGUiOiJ2LXNsaWRlci5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGVzdCB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogZGFya3NsYXRlZ3JheTtcbn1cblxuLnNsaWRlcl9fc2xpZGUge1xuICAgIHBvc2l0aW9uOiByZWxhdGl2ZTtcbn1cbi5zbGlkZXIge1xuICAgICZfX3RleHQge1xuICAgICAgICB6LWluZGV4OiAyO1xuICAgICAgICBwb3NpdGlvbjogYWJzb2x1dGU7XG4gICAgICAgIGNvbG9yOiB3aGl0ZTtcbiAgICAgICAgdG9wOiAwO1xuICAgIH1cbn0iXX0= */

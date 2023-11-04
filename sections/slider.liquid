@@ -1,0 +1,376 @@
+{{ 'v-slider.css' | asset_url | stylesheet_tag }}
+<div class="test">
+  <h1>slider</h1>
+  <v-slider>
+    {%- for block in section.blocks -%}
+      <div class="slider__slide">
+        <img
+          class="slider__img"
+          src="{{block.settings.img_d | img_url: 'master'}}"
+          alt="" />
+        <div class="slider__text">
+          <p class="slider__title">title</p>
+          <p class="slider__subtitle">jbdjkweb fewr weh lijwe jioer
+          </p>
+          <p class="slider__btn">go</p>
+        </div>
+      </div>
+    {%- endfor -%}
+  </v-slider>
+</div>
+<script src="{{ 'v-slider.js' | asset_url }}" defer="defer"></script>
+<style>
+  .slider__text .slider__title {
+    color: {{ block.settings.title_color}}
+    ;
+  }
+  .slider__text .slider__subtitle {
+    color: {{ block.settings.subtitle_color}}
+    ;
+  }
+  .slider__text .slider__btn {
+    color: {{ block.settings.btn_color}}
+    ;
+  }
+</style>
+
+{% schema %}
+  {
+    "name": "slider",
+    "tag": "section",
+    "class": "slider",
+    "blocks": [
+      {
+        "type": "slider-type",
+        "name": "slider-name",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Images"
+          },
+          {
+            "type": "image_picker",
+            "label": "Desktop image",
+            "id": "img_d"
+          },
+          {
+            "type": "image_picker",
+            "label": "Mobile image",
+            "id": "img_m"
+          },
+          {
+            "type": "image_picker",
+            "label": "AR Desktop image",
+            "id": "img_d_ar"
+          }, {
+            "type": "image_picker",
+            "label": "AR Mobile image",
+            "id": "img_m_ar"
+          },
+
+//
+// TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT TEXT
+//                                                Desktop
+          {
+            "type": "header",
+            "content": "Block with text"
+          }, {
+            "type": "color",
+            "label": "Color title",
+            "id": "title_color"
+          }, {
+            "type": "range",
+            "id": "title_font",
+            "min": 12,
+            "max": 80,
+            "step": 2,
+            "default": 16,
+            "unit": "px",
+            "label": "Font size title"
+          }, {
+            "type": "range",
+            "id": "title_weight",
+            "min": 300,
+            "max": 900,
+            "step": 100,
+            "default": 300,
+            "unit": "px",
+            "label": "Font weight title"
+          }, {
+            "type": "text",
+            "label": "Title",
+            "id": "title_"
+          }, {
+            "type": "text",
+            "label": "AR title",
+            "id": "title_ar"
+          }, {
+            "type": "color",
+            "label": "Color subtitle",
+            "id": "subtitle_color"
+          }, {
+            "type": "range",
+            "id": "sybtitle_font",
+            "min": 12,
+            "max": 80,
+            "step": 2,
+            "default": 16,
+            "unit": "px",
+            "label": "Font size subtitle"
+          }, {
+            "type": "range",
+            "id": "subtitle_weight",
+            "min": 300,
+            "max": 900,
+            "step": 100,
+            "default": 300,
+            "unit": "px",
+            "label": "Font weight subtitle"
+          }, {
+            "type": "richtext",
+            "label": "Subtitle",
+            "id": "subtitle_"
+          }, {
+            "type": "richtext",
+            "label": "AR subtitle",
+            "id": "subtitle_ar"
+          }, {
+            "type": "color",
+            "label": "Color button text",
+            "id": "btn_color"
+          }, {
+            "type": "color",
+            "label": "Color button",
+            "id": "btn_bg"
+          }, {
+            "type": "checkbox",
+            "id": "btn_is_outline",
+            "label": "Outline button",
+            "default": false
+          }, {
+            "type": "text",
+            "label": "Button text",
+            "id": "btn_text"
+          }, {
+            "type": "url",
+            "label": "Button url",
+            "id": "btn_url"
+          }, {
+            "type": "text",
+            "label": "AR button text",
+            "id": "btn_text_ar"
+          }, {
+            "type": "url",
+            "label": "AR button url",
+            "id": "btn_url_ar"
+          }, {
+            "type": "header",
+            "content": "Block with text posution"
+          }, {
+            "type": "range",
+            "id": "text_width",
+            "min": 200,
+            "max": 800,
+            "step": 10,
+            "default": 400,
+            "unit": "px",
+            "label": "Width block with text"
+          }, {
+            "type": "select",
+            "id": "text_align_item",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              }, {
+                "value": "center",
+                "label": "Center"
+              }, {
+                "value": "top",
+                "label": "Top"
+              }
+            ],
+            "default": "left",
+            "label": "Text align item"
+          }, {
+            "type": "select",
+            "id": "text_align_item_ar",
+            "options": [
+              {
+                "value": "left",
+                "label": "Left"
+              }, {
+                "value": "center",
+                "label": "Center"
+              }, {
+                "value": "top",
+                "label": "Top"
+              }
+            ],
+            "default": "left",
+            "label": "AR Text align item"
+          }, {
+            "type": "select",
+            "id": "text_position_d",
+            "options": [
+              {
+                "value": "top:0;left:0",
+                "label": "Top/Left"
+              },
+              {
+                "value": "top:0;left:50%",
+                "label": "Top/Center"
+              },
+              {
+                "value": "top:0;right:0",
+                "label": "Top/Right"
+              },
+              {
+                "value": "center:50%;left:0",
+                "label": "Center/Left"
+              }, {
+                "value": "center:50%;left:50%",
+                "label": "Center"
+              }, {
+                "value": "center:50%;right:0",
+                "label": "Center/Right"
+              }, {
+                "value": "bottom:0;left:0",
+                "label": "Bottom/Left"
+              }, {
+                "value": "bottom:0;left:50%",
+                "label": "Bottom/Center"
+              }, {
+                "value": "bottom:0;right:0",
+                "label": "Bottom/Right"
+              }
+            ],
+            "default": "center:50%;left:0",
+            "label": "Desktop text position "
+          }, {
+            "type": "select",
+            "id": "text_position_m",
+            "options": [
+              {
+                "value": "top:0;left:0",
+                "label": "Top/Left"
+              },
+              {
+                "value": "top:0;left:50%",
+                "label": "Top/Center"
+              },
+              {
+                "value": "top:0;right:0",
+                "label": "Top/Right"
+              },
+              {
+                "value": "center:50%;left:0",
+                "label": "Center/Left"
+              }, {
+                "value": "center:50%;left:50%",
+                "label": "Center"
+              }, {
+                "value": "center:50%;right:0",
+                "label": "Center/Right"
+              }, {
+                "value": "bottom:0;left:0",
+                "label": "Bottom/Left"
+              }, {
+                "value": "bottom:0;left:50%",
+                "label": "Bottom/Center"
+              }, {
+                "value": "bottom:0;right:0",
+                "label": "Bottom/Right"
+              }
+            ],
+            "default": "center:50%;left:0",
+            "label": "Mobile text position "
+          }, {
+            "type": "select",
+            "id": "text_position_d_ar",
+            "options": [
+              {
+                "value": "top:0;left:0",
+                "label": "Top/Left"
+              },
+              {
+                "value": "top:0;left:50%",
+                "label": "Top/Center"
+              },
+              {
+                "value": "top:0;right:0",
+                "label": "Top/Right"
+              },
+              {
+                "value": "center:50%;left:0",
+                "label": "Center/Left"
+              }, {
+                "value": "center:50%;left:50%",
+                "label": "Center"
+              }, {
+                "value": "center:50%;right:0",
+                "label": "Center/Right"
+              }, {
+                "value": "bottom:0;left:0",
+                "label": "Bottom/Left"
+              }, {
+                "value": "bottom:0;left:50%",
+                "label": "Bottom/Center"
+              }, {
+                "value": "bottom:0;right:0",
+                "label": "Bottom/Right"
+              }
+            ],
+            "default": "center:50%;left:0",
+            "label": "AR Desktop text position"
+          }, {
+            "type": "select",
+            "id": "text_position_m_ar",
+            "options": [
+              {
+                "value": "top:0;left:0",
+                "label": "Top/Left"
+              },
+              {
+                "value": "top:0;left:50%",
+                "label": "Top/Center"
+              },
+              {
+                "value": "top:0;right:0",
+                "label": "Top/Right"
+              },
+              {
+                "value": "center:50%;left:0",
+                "label": "Center/Left"
+              }, {
+                "value": "center:50%;left:50%",
+                "label": "Center"
+              }, {
+                "value": "center:50%;right:0",
+                "label": "Center/Right"
+              }, {
+                "value": "bottom:0;left:0",
+                "label": "Bottom/Left"
+              }, {
+                "value": "bottom:0;left:50%",
+                "label": "Bottom/Center"
+              }, {
+                "value": "bottom:0;right:0",
+                "label": "Bottom/Right"
+              }
+            ],
+            "default": "center:50%;left:0",
+            "label": "AR Mobile text position "
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "slider"
+      }
+    ]
+  }
+{% endschema %}
+
+<script></script>
