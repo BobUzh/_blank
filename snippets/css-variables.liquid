@@ -9,7 +9,7 @@
 	{{ font_body_bold_italic | font_face: font_display: 'swap' }}
 
     :root {
-        --color-background: {{ settings.color_background }};
+        --color-background: {{ settings.color_schemes[0].settings.background }};
         --color-text: {{ settings.color_text }};
         --color-heading: {{ settings.color_heading }};
         --color-link: {{ settings.color_link }};

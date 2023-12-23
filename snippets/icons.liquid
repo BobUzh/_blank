@@ -1,0 +1,18 @@
+{% case icon %}
+{% when 'search' %}
+    <svg width="100%" viewBox="0 0 24 24">
+        <circle fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" class="cls-1" cx="10" cy="9.93" r="8.41"></circle>
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" class="cls-1" d="M16.29,16.22l6.12,6.11"></path>
+    </svg>
+{% when 'cart' %}
+    <svg width="100%" viewBox="0 0 24 24">
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" class="cls-1" d="m19.84 7.53 1.4 12.88a1.73 1.73 0 0 1-1.53 1.91H4.48a1.73 1.73 0 0 1-1.73-1.72 1.15 1.15 0 0 1 0-.19L4.16 7.53a.27.27 0 0 1 .28-.25h15.12a.27.27 0 0 1 .28.25z"></path>
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" class="cls-1" d="M16.23 7.28V5.75a4.23 4.23 0 0 0-8.46 0v1.53"></path>    
+    </svg>
+{% when '>' %}
+    <svg xmlns="http://www.w3.org/2000/svg" width="9" height="16" viewBox="0 0 9 16" fill="none">
+        <path d="M8.70711 8.70711C9.09763 8.31658 9.09763 7.68342 8.70711 7.29289L2.34315 0.928932C1.95262 0.538408 1.31946 0.538408 0.928932 0.928932C0.538408 1.31946 0.538408 1.95262 0.928932 2.34315L6.58579 8L0.928932 13.6569C0.538408 14.0474 0.538408 14.6805 0.928932 15.0711C1.31946 15.4616 1.95262 15.4616 2.34315 15.0711L8.70711 8.70711ZM7 9H8V7H7V9Z" fill="#6D5F52"/>
+    </svg>
+{% else %}
+
+{% endcase %}

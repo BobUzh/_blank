@@ -1,0 +1,39 @@
+{
+  "accessibility": {
+    "skip_to_text": "Skip to content",
+    "refresh_page": "Choosing a selection results in a full page refresh.",
+    "link_messages": {
+      "new_window": "Opens in a new window.",
+      "external": "Opens external website."
+    }
+  },
+  "settings_schema": {
+    "colors": {
+      "name": "Colors",
+      "settings": {
+        "background": {
+          "label": "Background"
+        },
+        "background_gradient": {
+          "label": "Background gradient",
+          "info": "Background gradient replaces background where possible."
+        },
+        "text": {
+          "label": "Text"
+        },
+        "button_background": {
+          "label": "Solid button background"
+        },
+        "button_label": {
+          "label": "Solid button label"
+        },
+        "secondary_button_label": {
+          "label": "Outline button"
+        },
+        "shadow": {
+          "label": "Shadow"
+        }
+      }
+    }
+  }
+}

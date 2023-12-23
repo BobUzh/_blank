@@ -42,8 +42,9 @@
 		if (Shopify.designMode) {
 			document.documentElement.classList.add('shopify-design-mode');
 		}
-	</script>
-
+	// </script>
+	{% comment %} {{ 'variable.css' | asset_url | stylesheet_tag }} {% endcomment %}
+	<link rel="stylesheet" href="{{ 'variable.css' | asset_url }}">
 	{% render 'css-variables' %}
 	{{ 'global.css' | asset_url | stylesheet_tag }}
 

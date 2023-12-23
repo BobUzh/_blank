@@ -1,6 +1,124 @@
+{{ 'header.css' | asset_url | stylesheet_tag }}
+<style>
+  {% if section.settings.full_width %}
+    nav {
+      width: 100%;
+      order: 3;
+    }
+  {% endif %}
+  {% if section.settings.logo_position == 'center' and section.settings.full_width == false %}
+    .nav-logo {
+      order: 2;
+    }
+    .nav-icons {
+      order: 3;
+    }
+    nav {
+      order: 1;
+    }
+  {% endif %}
+</style>
+
+<div class="header">
+  <div class="header__wrapper container">
+    <div class="nav">
+      {% if section.settings.logo_position == 'center' and section.settings.search_position == 'left' and section.settings.full_width %}
+        <span>{% render 'icons', icon: 'search' %}</span>
+      {% endif %}
+      <div class="nav-logo">
+        <h1>Vox</h1>
+        {% if section.settings.logo_position == 'left' and section.settings.search_position == 'left' %}
+          <span>{% render 'icons', icon: 'search' %}</span>
+        {% endif %}
+      </div>
+      <nav>
+        {% if section.settings.logo_position == 'center' and section.settings.search_position == 'left' and section.settings.full_width == false %}
+          <span>{% render 'icons', icon: 'search' %}</span>
+        {% endif %}
+        <ul>
+          {% for item in section.settings.menu.links %}
+            <li class="item">
+              <a href="#">{{ item.title }}</a>
+              <script>console.log('section.settings.menu')</script>
+              <script>console.log('{{ item.links[0] }}')</script>
+              {% if item.links != empty %}
+                {% render 'icons', icon: '>' %}
+                <ul class="submenu">
+                  {% for subItem in item.links %}
+                    <li class="subitem">
+                      <a href="#">{{ subItem.title }}</a>
+                      {% if subItem.links != empty %}
+                        {% render 'icons', icon: '>' %}
+                        <ul class="submenu">
+                          {% for subi in subItem.links %}
+                            <li class="subitem"><a href="">{{ subi.title }}</a></li>
+                          {% endfor %}
+                        </ul>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              {% endif %}
+            </li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <div class="nav-icons">
+        {% if section.settings.search_position == 'right' %}
+          <span>{% render 'icons', icon: 'search' %}</span>
+        {% endif %}
+        {% render 'icons', icon: 'cart' %}
+      </div>
+    </div>
+  </div>
+</div>
+
 {% schema %}
   {
     "name": "header",
+    "settings": [
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Menu"
+      },
+      {
+        "type": "select",
+        "id": "logo_position",
+        "label": "Logo position",
+        "options": [
+          {
+            "label": "Left",
+            "value": "left"
+          },
+          {
+            "label": "Center",
+            "value": "center"
+          }
+        ]
+      },
+      {
+        "type": "select",
+        "id": "search_position",
+        "label": "Search position",
+        "options": [
+          {
+            "label": "Left",
+            "value": "left"
+          },
+          {
+            "label": "Right",
+            "value": "right"
+          }
+        ]
+      },
+      {
+        "type": "checkbox",
+        "id": "full_width",
+        "label": "Menu on new row",
+        "default": false
+      }
+    ],
     "presets": [
       {
         "name": "header"

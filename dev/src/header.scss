@@ -1,0 +1,90 @@
+html {
+    background-color: rgb(165, 180, 246);
+}
+.header {
+    background-color: var(--header-background);
+    // background-color: rgb(50, 151, 245);
+    color: var(--header-text-color);
+    .header__wrapper {
+        .nav {
+            padding: 12px 0;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            .nav-logo {
+                display: flex;
+                align-items: center;
+            }
+
+            nav {
+                justify-self: center;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                svg {
+                    width: 20px;
+                    height: 18px;
+                }
+
+                & > ul {
+                    position: relative;
+                    padding: 0;
+                    display: flex;
+                    column-gap: 20px;
+
+                    & > .item > svg {
+                        margin-left: 6px;
+                        transform: rotate(90deg);
+                    }
+
+                    .item {
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    li:hover > ul {
+                        visibility: visible;
+                        transition: all 0.3s ease;
+                    }
+                }
+                .submenu {
+                    background-color: white !important;
+                    visibility: hidden;
+                    position: absolute;
+                    box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.34);
+                    top: 100%;
+                    background-color: var(--header-background-submenu);
+                    padding: 18px 24px;
+
+                    .subitem {
+                        padding: 6px 0;
+                        display: flex;
+                        gap: 30px;
+                        cursor: pointer;
+
+                        a {
+                            transition: transform 0.5s;
+                        }
+
+                        &:hover > a:has(+ svg) {
+                            transition: transform 0.5s;
+                            transform: translateX(-10px);
+                        }
+                    }
+                    .subitem > ul {
+                        width: max-content;
+                        left: calc(100% + 16px);
+                        top: 0;
+                    }
+                }
+            }
+
+            .nav-icons {
+                justify-self: end;
+            }
+
+        }
+    }
+}

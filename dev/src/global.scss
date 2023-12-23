@@ -1,6 +1,25 @@
 @import "../node_modules/normalize.css/normalize";
 @import '../node_modules/flickity/css/flickity';
 
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+svg {
+	width: 30px;
+	height: auto;
+}
+
+li {
+	list-style: none;
+}
+
+.container {
+	max-width: 1300px;
+	margin: 0 auto;
+}
+
 .visually-hidden {
 	position: absolute !important;
 	overflow: hidden;
@@ -13,7 +32,6 @@
 }
 
 .skip-to-content-link {
-	
 	&:focus {
 		z-index: 9999;
 		position: inherit;
