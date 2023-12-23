@@ -2,7 +2,8 @@
   "sections": {
     "main": {
       "type": "empty-section",
-      "settings": {}
+      "settings": {
+      }
     }
   },
   "order": [

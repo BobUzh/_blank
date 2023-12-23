@@ -1,5 +1,6 @@
 {
   "current": {
+<<<<<<< HEAD
     "content_for_index": [],
     "color_schemes": {
       "background-1": {
@@ -58,6 +59,11 @@
         }
       }
     }
+=======
+    "content_for_index": [
+
+    ]
+>>>>>>> 0d93c896e62f8805862743718f24d22f14e5d321
   },
   "presets": {
     "Default": {
